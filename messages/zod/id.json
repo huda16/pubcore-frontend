@@ -1,0 +1,132 @@
+{
+  "zod": {
+    "errors": {
+      "invalid_type": "Diharapkan {expected}, diterima {received}",
+      "invalid_type_received_undefined": "{path} diperlukan",
+      "invalid_literal": "Nilai literal tidak valid, diharapkan {expected}",
+      "unrecognized_keys": "Kunci tidak dikenali di objek: {keys}",
+      "invalid_union": "Masukan tidak valid",
+      "invalid_union_discriminator": "Nilai diskriminator tidak valid. Diharapkan {options}",
+      "invalid_enum_value": "Nilai enum tidak valid. Diharapkan {options}, diterima {received}",
+      "invalid_arguments": "Argumen fungsi tidak valid",
+      "invalid_return_type": "Tipe kembalian fungsi tidak valid",
+      "invalid_date": "Tanggal tidak valid",
+      "custom": "Masukan tidak valid",
+      "invalid_intersection_types": "Hasil irisan tidak dapat digabungkan",
+      "not_multiple_of": "Angka harus kelipatan dari {multipleOf}",
+      "not_finite": "Angka harus terbatas",
+      "invalid_string": {
+        "email": "Email tidak valid",
+        "emoji": "Emoji tidak valid",
+        "url": "URL tidak valid",
+        "uuid": "UUID tidak valid",
+        "ulid": "ULID tidak valid",
+        "ip": "IP tidak valid",
+        "cuid": "CUID tidak valid",
+        "cuid2": "CUID2 tidak valid",
+        "regex": "Tidak valid",
+        "datetime": "Tanggal dan waktu tidak valid",
+        "startsWith": "Masukan tidak valid: harus dimulai dengan \"{startsWith}\"",
+        "endsWith": "Masukan tidak valid: harus diakhiri dengan \"{endsWith}\""
+      },
+      "too_small": {
+        "array": {
+          "exact": "{path, select, missingTranslation {Array} other {{path}}} harus berisi tepat {minimum} elemen",
+          "inclusive": "{path, select, missingTranslation {Array} other {{path}}} harus berisi minimal {minimum} elemen",
+          "not_inclusive": "{path, select, missingTranslation {Array} other {{path}}} harus berisi lebih dari {minimum} elemen"
+        },
+        "string": {
+          "exact": "{path, select, missingTranslation {String} other {{path}}} harus berisi tepat {minimum} karakter",
+          "inclusive": "{path, select, missingTranslation {String} other {{path}}} harus berisi minimal {minimum} karakter",
+          "not_inclusive": "{path, select, missingTranslation {String} other {{path}}} harus berisi lebih dari {minimum} karakter"
+        },
+        "number": {
+          "exact": "{path, select, missingTranslation {Number} other {{path}}} harus tepat {minimum}",
+          "inclusive": "{path, select, missingTranslation {Number} other {{path}}} harus lebih besar atau sama dengan {minimum}",
+          "not_inclusive": "{path, select, missingTranslation {Number} other {{path}}} harus lebih besar dari {minimum}"
+        },
+        "bigint": {
+          "exact": "{path, select, missingTranslation {Number} other {{path}}} harus tepat {minimum}",
+          "inclusive": "{path, select, missingTranslation {Number} other {{path}}} harus lebih besar atau sama dengan {minimum}",
+          "not_inclusive": "{path, select, missingTranslation {Number} other {{path}}} harus lebih besar dari {minimum}"
+        },
+        "set": {
+          "exact": "Masukan tidak valid",
+          "inclusive": "Masukan tidak valid",
+          "not_inclusive": "Masukan tidak valid"
+        },
+        "date": {
+          "exact": "Tanggal harus tepat {minimum, date, short}",
+          "inclusive": "Tanggal harus lebih besar atau sama dengan {minimum, date, short}",
+          "not_inclusive": "Tanggal harus lebih besar dari {minimum, date, short}"
+        }
+      },
+      "too_big": {
+        "array": {
+          "exact": "{path, select, missingTranslation {Array} other {{path}}} harus berisi tepat {maximum} elemen",
+          "inclusive": "{path, select, missingTranslation {Array} other {{path}}} harus berisi maksimal {maximum} elemen",
+          "not_inclusive": "{path, select, missingTranslation {Array} other {{path}}} harus berisi kurang dari {maximum} elemen"
+        },
+        "string": {
+          "exact": "{path, select, missingTranslation {String} other {{path}}} harus berisi tepat {maximum} karakter",
+          "inclusive": "{path, select, missingTranslation {String} other {{path}}} harus berisi maksimal {maximum} karakter",
+          "not_inclusive": "{path, select, missingTranslation {String} other {{path}}} harus berisi kurang dari {maximum} karakter"
+        },
+        "number": {
+          "exact": "{path, select, missingTranslation {Number} other {{path}}} harus tepat {maximum}",
+          "inclusive": "{path, select, missingTranslation {Number} other {{path}}} harus lebih kecil atau sama dengan {maximum}",
+          "not_inclusive": "{path, select, missingTranslation {Number} other {{path}}} harus lebih kecil dari {maximum}"
+        },
+        "bigint": {
+          "exact": "{path, select, missingTranslation {Number} other {{path}}} harus tepat {maximum}",
+          "inclusive": "{path, select, missingTranslation {Number} other {{path}}} harus lebih kecil atau sama dengan {maximum}",
+          "not_inclusive": "{path, select, missingTranslation {Number} other {{path}}} harus lebih kecil dari {maximum}"
+        },
+        "set": {
+          "exact": "Masukan tidak valid",
+          "inclusive": "Masukan tidak valid",
+          "not_inclusive": "Masukan tidak valid"
+        },
+        "date": {
+          "exact": "Tanggal harus tepat {maximum, date, short}",
+          "inclusive": "Tanggal harus lebih kecil atau sama dengan {maximum, date, short}",
+          "not_inclusive": "Tanggal harus lebih kecil dari {maximum, date, short}"
+        }
+      }
+    },
+    "validations": {
+      "email": "email",
+      "emoji": "emoji",
+      "url": "url",
+      "uuid": "uuid",
+      "ulid": "ulid",
+      "ip": "ip",
+      "cuid": "cuid",
+      "cuid2": "cuid2",
+      "regex": "regex",
+      "datetime": "datetime"
+    },
+    "types": {
+      "function": "fungsi",
+      "number": "angka",
+      "string": "string",
+      "nan": "nan",
+      "integer": "bilangan bulat",
+      "float": "float",
+      "boolean": "boolean",
+      "date": "tanggal",
+      "bigint": "bigint",
+      "undefined": "undefined",
+      "symbol": "simbol",
+      "null": "null",
+      "array": "array",
+      "object": "objek",
+      "unknown": "tidak diketahui",
+      "promise": "janji",
+      "void": "void",
+      "never": "never",
+      "map": "map",
+      "set": "set"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+/* @import "tailwindcss"; */
+
+li.nestable-item {
+  border: 1px solid rgba(var(--mui-palette-common-onBackgroundChannel) / 0.23);
+  border-radius: 5px;
+}
+
+.nestable-item:last-child,
+.nestable-item-copy:last-child {
+  margin-bottom: 10px;
+}

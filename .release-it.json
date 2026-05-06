@@ -1,0 +1,14 @@
+{
+  "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+  "github": {
+    "release": true
+  },
+  "git": {
+    "commit": true,
+    "tag": true,
+    "commitMessage": "chore: release v${version}"
+  },
+  "plugins": {
+    "release-it-pnpm": {}
+  }
+}

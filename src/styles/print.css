@@ -1,0 +1,16 @@
+@media print {
+  @page {
+    margin: 0;
+    size: auto;
+  }
+
+  body {
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .print-item:not(:last-of-type) {
+    page-break-after: always;
+  }
+}
