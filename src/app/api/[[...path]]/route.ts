@@ -80,17 +80,17 @@ async function proxyRequest(req: NextRequest) {
     return proxyResponse;
   } catch (error) {
     console.error("Proxy error:", error);
-      return NextResponse.json(
-        { error: "Backend request failed" },
-        { status: 500 },
-      );
+    return NextResponse.json(
+      { error: "Backend request failed" },
+      { status: 500 },
+    );
   }
 }
 
-  export const GET = proxyRequest;
-  export const POST = proxyRequest;
-  export const PUT = proxyRequest;
-  export const DELETE = proxyRequest;
-  export const PATCH = proxyRequest;
-  export const HEAD = proxyRequest;
-  export const OPTIONS = proxyRequest;
+export const GET = proxyRequest;
+export const POST = proxyRequest;
+export const PUT = proxyRequest;
+export const DELETE = proxyRequest;
+export const PATCH = proxyRequest;
+export const HEAD = proxyRequest;
+export const OPTIONS = proxyRequest;

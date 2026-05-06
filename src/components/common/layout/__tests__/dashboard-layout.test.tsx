@@ -14,6 +14,21 @@ jest.mock("@/components/common/api-config", () => ({
   ApiConfig: () => <div data-testid="api-config">API Config</div>,
 }));
 
+jest.mock("@/components/common/layout/auth-guard", () => ({
+  AuthGuard: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+}));
+
+jest.mock("@/components/common/sidebar", () => ({
+  Sidebar: () => <div data-testid="sidebar">Sidebar</div>,
+  DRAWER_WIDTH_VALUE: 240,
+}));
+
+jest.mock("@/providers/material-ui-provider", () => ({
+  MaterialUiProvider: ({ children }: { children: React.ReactNode }) => (
+    <>{children}</>
+  ),
+}));
+
 describe("DashboardLayout", () => {
   it("renders the layout with app title", () => {
     render(
@@ -22,7 +37,7 @@ describe("DashboardLayout", () => {
       </DashboardLayout>,
     );
 
-    expect(screen.getByText("Task Management UI")).toBeInTheDocument();
+    expect(screen.getByText("PubCore")).toBeInTheDocument();
   });
 
   it("renders children content", () => {
@@ -46,18 +61,14 @@ describe("DashboardLayout", () => {
     expect(screen.getByTestId("api-config")).toBeInTheDocument();
   });
 
-  it("has proper app bar structure", () => {
+  it("renders sidebar component", () => {
     render(
       <DashboardLayout>
         <div>Test Content</div>
       </DashboardLayout>,
     );
 
-    // App bar should be present - look for the header element
-    const header =
-      document.querySelector("header") ||
-      screen.getByText("Task Management UI").closest("header");
-    expect(header).toBeTruthy();
+    expect(screen.getByTestId("sidebar")).toBeInTheDocument();
   });
 
   it("renders main content area", () => {
@@ -70,7 +81,6 @@ describe("DashboardLayout", () => {
     const mainContent = screen.getByText("Main Content");
     expect(mainContent).toBeTruthy();
 
-    // Check if content is within a main element or container
     const main =
       mainContent.closest("main") || mainContent.closest('[role="main"]');
     expect(main || mainContent.parentElement).toBeTruthy();
