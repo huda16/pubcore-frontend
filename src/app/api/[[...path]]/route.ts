@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8080";
 
-export async function handler(req: NextRequest) {
+async function proxyRequest(req: NextRequest) {
   try {
     // Get the path from the URL
     const pathname = req.nextUrl.pathname;
@@ -80,17 +80,17 @@ export async function handler(req: NextRequest) {
     return proxyResponse;
   } catch (error) {
     console.error("Proxy error:", error);
-    return NextResponse.json(
-      { error: "Backend request failed" },
-      { status: 500 },
-    );
+      return NextResponse.json(
+        { error: "Backend request failed" },
+        { status: 500 },
+      );
   }
 }
 
-export const GET = handler;
-export const POST = handler;
-export const PUT = handler;
-export const DELETE = handler;
-export const PATCH = handler;
-export const HEAD = handler;
-export const OPTIONS = handler;
+  export const GET = proxyRequest;
+  export const POST = proxyRequest;
+  export const PUT = proxyRequest;
+  export const DELETE = proxyRequest;
+  export const PATCH = proxyRequest;
+  export const HEAD = proxyRequest;
+  export const OPTIONS = proxyRequest;
